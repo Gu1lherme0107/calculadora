@@ -1,12 +1,11 @@
 let result  = document.getElementById("result");
 
-// Input numbers by key pressed
+
 function input(num){
     let number = result.value;
     result.value = number + num;
 }
 
-// Calculator logic
 function calc(){
     if(result.value != ""){
         let result2  = result.value;
@@ -16,24 +15,15 @@ function calc(){
     }
 }
 
-// Reset button
 function reset(){
     result.value = "";
 }
 
-// Del button
 function del(){
     let result2  = result.value;
     result.value = result2.substring(0, result2.length - 1);
 }
 
-/*
-    ====================================================
-    =================== TOGGLE THEME ===================
-    ====================================================
-*/
-
-// All colors for differents themes
 const theme = {
     defaul(){
         root.style.setProperty('--background'          , '#3a4764');
@@ -87,14 +77,12 @@ const theme = {
     }
 }
 
-// Get the root element
 var root = document.querySelector(':root');
 
-// Checking the user themes preference
 const darkThemeMq  = window.matchMedia("(prefers-color-scheme: dark)");
 const lightThemeMq = window.matchMedia("(prefers-color-scheme: light)");
 
-// changing the theme with the results above
+
 if (darkThemeMq.matches) {
     document.getElementById('btnTheme').value = "3";
     theme.dark();
@@ -106,12 +94,10 @@ if (darkThemeMq.matches) {
     theme.defaul();    
 }
 
-// Create a function for recive the value of range input
 function myFunction_set(val) {
-    // receiving the input type range value
+    
     document.getElementById('btnTheme').value = val; 
-
-    // changing the theme with the results above
+    
     if(val == 1){
         theme.defaul();
     } 
